@@ -10,12 +10,12 @@ import lombok.Data;
 @Data
 public class Captura {
 	
-	@OneToMany(mappedBy = "pokemon", cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="pokemon_id")
-	private Set<Pokemon> pokemonId = new HashSet<>();
+	private Pokemon pokemonId;
 	
-	@OneToMany(mappedBy = "entrenador", cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="entrenador_id")
-	private Set<Pokemon> entrenadorId = new HashSet<>();
+	private Entrenador entrenadorId;
 
 }
